@@ -1,0 +1,32 @@
+{
+  "name": "the-slade",
+  "version": "1.0.0",
+  "description": "",
+  "scripts": {
+    "start": "parcel src/index.html -p 8000",
+		"build": "parcel build --out-dir dist src/index.html",
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/rristov60/The-Slade.git"
+  },
+  "author": "Riste Ristov",
+  "license": "GPLv3",
+  "bugs": {
+    "url": "https://github.com/rristov60/The-Slade/issues"
+  },
+  "homepage": "https://github.com/rristov60/The-Slade#readme",
+  "dependencies": {
+    "parcel-plugin-clean-easy": "^1.0.2",
+    "parcel-plugin-static-files-copy": "^2.6.0",
+    "phaser": "^3.55.2"
+  },
+  "parcelCleanPaths": [
+		"dist"
+	],
+  "staticFiles": {
+		"staticPath": "public",
+		"watcherGlob": "**"
+	}
+}
