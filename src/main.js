@@ -3,7 +3,8 @@ import testScene from './scenes/testScene';
 import TemplateScene from './scenes/templateScene';
 import Example from './scenes/SecondTestScene';
 import HexagonScene from './scenes/HexagonScene';
-import UIScene from './scenes/UIScene';
+import WelcomeScreen from './Screens/WelcomeScreen';
+import LevelsScreen from './scenes/LevelsScreen';
 
 const config = {
 	type: Phaser.AUTO,
@@ -12,7 +13,7 @@ const config = {
 	physics: {
 		default: 'arcade',
 		arcade: {
-			gravity: { y: 200 },
+			gravity: { y: 0 },
             debug: true
 		}
 	}
@@ -24,6 +25,11 @@ game.scene.add('test', testScene);
 game.scene.add('template', TemplateScene);
 game.scene.add('example', Example);
 game.scene.add('hexagon', HexagonScene);
-game.scene.add('ui', UIScene);
+game.scene.add('welcome', WelcomeScreen);
+game.scene.add('levels', LevelsScreen);
 
-game.scene.start('example');
+game.scene.start('welcome');
+
+// setTimeout(() => {
+// 	game.scene.add('ui', UIScene);
+// }, 5000);
