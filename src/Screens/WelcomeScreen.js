@@ -9,18 +9,12 @@ class WelcomeScreen extends Phaser.Scene {
         this.load.image('background', 'assets/welcome_screen/Welcome_Screen_Slade.jpg');
         this.load.image('play', 'assets/welcome_screen/Button_Play.jpg');
         this.load.image('play_clicked', 'assets/welcome_screen/Button_Play_Clicked.jpg');
-        this.load.audio('backgorund_music', ['assets/music/background.mp3']);
         this.load.audio('click_sound', ['assets/sounds/click_001.ogg']);
     }
 
     create() {
         const currentScene = this;
         this.add.image(400, 300, 'background');
-        this.input.setDefaultCursor('url(assets/isometric/cursorSword_silver.png), pointer');
-
-        this.sound.add('backgorund_music', {
-            loop: true
-        }).play();
 
         const clickSound = this.sound.add('click_sound', {
             loop: false

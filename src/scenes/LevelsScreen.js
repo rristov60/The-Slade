@@ -53,6 +53,14 @@ class LevelsScreen extends Phaser.Scene {
             loop: false
         });
 
+
+        for(let i = 1; i < 10; i++) {
+            levels[i].on('pointerdown', function () {
+                clickSound.play();
+                currentScene.scene.start(`level_${i}`);
+            });
+        }
+
         this.levelsBackBtn.on('pointerdown', function () {
             clickSound.play();
             currentScene.scene.start('welcome');
