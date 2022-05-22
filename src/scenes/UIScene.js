@@ -9,16 +9,30 @@ export default class UIScene extends Phaser.Scene {
 
     preload ()
     {
-        this.load.image('bottom_ui', 'assets/isometric/bottom_UI.png');
-        this.load.image('right_ui', 'assets/isometric/right_UI.png');
-        this.load.image('btn', 'assets/isometric/btn.png');
+        // this.load.image('bottom_ui', 'assets/isometric/bottom_UI.png');
+        // this.load.image('right_ui', 'assets/isometric/right_UI.png');
+        // this.load.image('btn', 'assets/isometric/btn.png');
     }
 
     create() 
     {
+        const currentScene = this;
         this.input.setDefaultCursor('url(assets/isometric/cursorSword_silver.png), pointer');
         this.add.image(400, 300, 'bottom_ui');
         this.add.image(400, 300, 'right_ui');
+
+        const clickSound = this.sound.add('click_sound', {
+            loop: false
+        });
+
+        // const startCodeBtn = this.add.image(695, 452, 'start_code_btn').setInteractive({
+        //     cursor: 'url(assets/isometric/cursorHand_grey.png), pointer'
+        // });
+
+        // const exitLevelBtn = this.add.image(760, 452, 'exit_level_btn').setInteractive({
+        //     cursor: 'url(assets/isometric/cursorHand_grey.png), pointer'
+        // });
+
         const btn = this.physics.add.sprite(400, 300, 'btn').setInteractive({ 
             cursor: 'url(assets/isometric/cursorHand_grey.png), pointer'
         });
@@ -26,6 +40,11 @@ export default class UIScene extends Phaser.Scene {
         btn.setInteractive();
 
         this.input.setDraggable(btn);
+
+        exitLevelBtn.on('pointerdown', function () {
+            clickSound.play();
+            currentScene.scene.start(`levels`);
+        });
 
         
         btn.on('drag', function(pointer,dragX, dragY) {

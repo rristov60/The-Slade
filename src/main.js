@@ -15,6 +15,7 @@ import Level6Scene from './scenes/Levels/6/Level6Scene';
 import Level7Scene from './scenes/Levels/7/Level7Scene';
 import Level8Scene from './scenes/Levels/8/Level8Scene';
 import Level9Scene from './scenes/Levels/9/Level9Scene';
+import GridTestScene from './scenes/GridTestScene';
 
 const config = {
 	type: Phaser.AUTO,
@@ -47,5 +48,6 @@ game.scene.add('level_6', Level6Scene);
 game.scene.add('level_7', Level7Scene);
 game.scene.add('level_8', Level8Scene);
 game.scene.add('level_9', Level9Scene);
+game.scene.add('grid_scene', GridTestScene);
 
-game.scene.start('entry');
+game.scene.start('welcome');
