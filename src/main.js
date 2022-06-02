@@ -16,6 +16,8 @@ import Level7Scene from './scenes/Levels/7/Level7Scene';
 import Level8Scene from './scenes/Levels/8/Level8Scene';
 import Level9Scene from './scenes/Levels/9/Level9Scene';
 import GridTestScene from './scenes/GridTestScene';
+import GameOverScene from './scenes/Outcome/GameOverScene';
+import LevelCompletedScene from './scenes/Outcome/LevelCompleted';
 
 const config = {
 	type: Phaser.AUTO,
@@ -25,10 +27,8 @@ const config = {
 		default: 'arcade',
 		arcade: {
 			gravity: { y: 0 },
-            debug: true
 		}
 	}
-    // scene: [Example, UIScene]
 };
 
 const game = new Phaser.Game(config);
@@ -49,5 +49,7 @@ game.scene.add('level_7', Level7Scene);
 game.scene.add('level_8', Level8Scene);
 game.scene.add('level_9', Level9Scene);
 game.scene.add('grid_scene', GridTestScene);
+game.scene.add('game_over', GameOverScene);
+game.scene.add('level_completed', LevelCompletedScene);
 
-game.scene.start('welcome');
+game.scene.start('entry');
