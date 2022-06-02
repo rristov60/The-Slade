@@ -17,4 +17,4 @@ npm install -g parcel-bundler
 ```
 
 ### Small preview
-![](the_slade.gif)
+![](new_gif.gif)
